@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 20:28:37 by amary             #+#    #+#             */
-/*   Updated: 2026/01/06 22:25:02 by amary            ###   ########.fr       */
+/*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
+/*   Updated: 2026/01/06 22:09:52 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#ifndef SO_LONG
+# define SO_LONG
 
-void	my_free(char **str)
+# include <stdio.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include "../../../1er_cercle/get_next_line/get_next_line.h"
+
+typedef struct s_map
 {
-	int	j = 0;
+	char	**grid;
+	int		height;
+	int		width;
+}			t_map;
 
-	while (str[j])
-		free(str[j++]);
-	free(str);
-	return ;
-}
+t_map	read_map(char *str);
+char	*get_next_line(int fd);
+void	initialize_map(char *str, t_map *map);
+int		ft_strlen(char *str);
 
-int	main(int argc, char **argv)
-{
-	t_map	map;
-	
-	if (argc != 2)
-		return (write(2, "Error\n", 7), 0);
-	map = read_map(argv[1]);
-	int j = 0;
-	while (map.grid[j])
-		printf("%s", map.grid[j++]);
-	my_free(map.grid);
-	return (0);
-}
+#endif
