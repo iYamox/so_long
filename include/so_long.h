@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 16:06:29 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/07 16:27:50 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_parsing(t_map map);
 int		is_rectangle(t_map map);
 int		is_correct_wall(t_map map);
 int		for_first_and_last(char *str, int width);
-
+int		is_correct_char(t_map map);
+int		is_correct(char *str, int width);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: amary <amary@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/06 20:30:20 by amary             #+#    #+#              #
-#    Updated: 2026/01/07 15:55:28 by amary            ###   ########.fr        #
+#    Updated: 2026/01/07 16:17:14 by amary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC = srcs/main.c \
 		srcs/parsing/ft_parsing.c \
 		srcs/parsing/is_rectangle.c \
 		srcs/parsing/is_correct_wall.c \
-		
+		srcs/parsing/is_correct_char.c \
 
 OBJ = $(SRC:.c=.o)
 
