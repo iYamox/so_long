@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   is_winable.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/07 15:06:16 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 18:14:46 by amary            ###   ########.fr       */
+/*   Created: 2026/01/07 17:49:27 by amary             #+#    #+#             */
+/*   Updated: 2026/01/07 18:26:44 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	ft_parsing(t_map map)
+int	is_winable(t_map map)
 {
-	if (!is_rectangle(map))
-		return (0);
-	if (!is_correct_wall(map))
-		return (0);
-	if (!is_correct_char(map))
-		return (0);
-	if (!have_all_collect(map))
-		return (0);
-	if (!is_winable(map))
-		return (0);
+	(void)map;
 	return (1);
 }

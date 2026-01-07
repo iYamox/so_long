@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 17:36:10 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/07 18:26:28 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int		is_correct_char(t_map map);
 int		is_correct(char *str, int width);
 int		have_all_collect(t_map map);
 void	ft_verif_collect(char *str, int	width, int *P, int *C, int *E);
+int		is_winable(t_map map);
 
 #endif
