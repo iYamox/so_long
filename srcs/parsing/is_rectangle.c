@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   is_rectangle.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 15:18:51 by amary            ###   ########.fr       */
+/*   Created: 2026/01/07 15:18:06 by amary             #+#    #+#             */
+/*   Updated: 2026/01/07 15:31:09 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG
-# define SO_LONG
+#include "../../include/so_long.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include "../../../1er_cercle/get_next_line/get_next_line.h"
-
-typedef struct s_map
+int	is_rectangle(t_map map)
 {
-	char	**grid;
-	int		height;
-	int		width;
-}			t_map;
-
-t_map	read_map(char *str);
-char	*get_next_line(int fd);
-void	initialize_map(char *str, t_map *map);
-int		ft_parsing(t_map map);
-int		is_rectangle(t_map map);
-
-
-#endif
+	int	width;
+	int	j;
+	
+	width = map.width;
+	j = 0;
+	while (map.grid[j])
+	{
+		if ((ft_strlen(map.grid[j]) - 1) != width)
+		{
+			if (!(map.grid[j + 1] == NULL))
+				return (0);
+		}
+		j++;
+	}
+	return (1);
+}
