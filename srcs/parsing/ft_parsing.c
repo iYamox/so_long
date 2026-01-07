@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 15:08:05 by amary            ###   ########.fr       */
+/*   Created: 2026/01/07 15:06:16 by amary             #+#    #+#             */
+/*   Updated: 2026/01/07 15:07:57 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG
-# define SO_LONG
+#include "../../include/so_long.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include "../../../1er_cercle/get_next_line/get_next_line.h"
-
-typedef struct s_map
+int	ft_parsing(t_map map)
 {
-	char	**grid;
-	int		height;
-	int		width;
-}			t_map;
-
-t_map	read_map(char *str);
-char	*get_next_line(int fd);
-void	initialize_map(char *str, t_map *map);
-int		ft_parsing(t_map map);
-
-
-#endif
+	
+	return (1);
+}

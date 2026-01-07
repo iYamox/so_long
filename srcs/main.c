@@ -6,32 +6,20 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:28:37 by amary             #+#    #+#             */
-/*   Updated: 2026/01/06 22:25:02 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/07 15:07:05 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void	my_free(char **str)
-{
-	int	j = 0;
-
-	while (str[j])
-		free(str[j++]);
-	free(str);
-	return ;
-}
-
 int	main(int argc, char **argv)
 {
 	t_map	map;
-	
+
 	if (argc != 2)
-		return (write(2, "Error\n", 7), 0);
+		return (write(2, "Error to many arguments\n", 25), 1);
 	map = read_map(argv[1]);
-	int j = 0;
-	while (map.grid[j])
-		printf("%s", map.grid[j++]);
-	my_free(map.grid);
+	if (!ft_parsing(map))
+		return (write(2, "Parsing error\n", 15), 1);
 	return (0);
 }

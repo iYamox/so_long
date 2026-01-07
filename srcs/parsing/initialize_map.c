@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 21:30:33 by amary             #+#    #+#             */
-/*   Updated: 2026/01/06 22:40:01 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/07 15:02:17 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	initialize_map(char *str, t_map *map)
 	if (fd < 0)
 		return (close (fd), exit(0));
 	line = get_next_line(fd);
+	map->width = ft_strlen(line);
 	while (line)
 	{
 		j++;
@@ -31,10 +32,9 @@ void	initialize_map(char *str, t_map *map)
 	}
 	map->grid = malloc ((j + 1) * sizeof(char *));
 	if (!map->grid)
-	{
-		write(2, "Error, allocation map grid failed", 34);
-		exit (0);
-	}
+		return (write(2, "Grid allocation error\n", 23), close(fd), exit (0));
+	map->grid[j] = NULL;
+	map->height = j;
 	close(fd);
 	return ;
 }

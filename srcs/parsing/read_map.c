@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:47:46 by amary             #+#    #+#             */
-/*   Updated: 2026/01/06 22:40:13 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/07 14:53:44 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ t_map	read_map(char *str)
 	initialize_map(str, &map);
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
+	{
+		close(fd);
 		exit(0);
+	}
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -31,9 +34,6 @@ t_map	read_map(char *str)
 		free(line);
 		line = get_next_line(fd);
 	}
-	map.grid[j] = NULL;
-	map.height = j + 1;
-	map.width = 0;
 	close(fd);
 	return (map);
 }
