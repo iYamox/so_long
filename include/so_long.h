@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 15:18:51 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/07 16:06:29 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*get_next_line(int fd);
 void	initialize_map(char *str, t_map *map);
 int		ft_parsing(t_map map);
 int		is_rectangle(t_map map);
+int		is_correct_wall(t_map map);
+int		for_first_and_last(char *str, int width);
 
 
 #endif
