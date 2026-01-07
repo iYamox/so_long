@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:06:16 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 16:18:05 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/07 16:36:01 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_parsing(t_map map)
 		return (0);
 	if (!is_correct_char(map))
 		return (0);
-	// if (!have_all_collect(map))
-	// 	return (0);
+	if (!have_all_collect(map))
+		return (0);
 	// if (!is_winable(map));
 	// 	return (0);
 	return (1);
