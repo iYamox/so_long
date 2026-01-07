@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:18:06 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 15:31:09 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/07 15:48:05 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int	is_rectangle(t_map map)
 	{
 		if ((ft_strlen(map.grid[j]) - 1) != width)
 		{
-			if (!(map.grid[j + 1] == NULL))
+			if (map.grid[j + 1] != NULL)
+				return (0);
+			if (ft_strlen(map.grid[j]) != width)
 				return (0);
 		}
 		j++;
