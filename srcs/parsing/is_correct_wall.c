@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:55:00 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 16:14:54 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/07 17:19:35 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	is_correct_wall(t_map map)
 	while (map.grid[j + 1])
 	{
 		if (!(map.grid[j][0] == '1' && map.grid[j][width - 1] == '1'))
-			return (printf("prout"), 0);
+			return (0);
 		j++;
 	}
 	if (for_first_and_last(map.grid[j], width) == 0)
