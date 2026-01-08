@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/07 15:06:16 by amary             #+#    #+#             */
-/*   Updated: 2026/01/08 18:35:16 by amary            ###   ########.fr       */
+/*   Created: 2026/01/08 18:08:35 by amary             #+#    #+#             */
+/*   Updated: 2026/01/08 18:37:55 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	ft_parsing(t_map map)
+void	flood_fill(char **grid, int x, int y)
 {
-	if (!is_rectangle(map))
-		return (0);
-	if (!is_correct_wall(map))
-		return (0);
-	if (!is_correct_char(map))
-		return (0);
-	if (!have_all_collect(map))
-		return (0);
-	if (!is_winable(map))
-		return (0);
-	return (1);
+	if (grid[y][x] == '1' || grid[y][x] == 'V')
+		return ;
+	if (grid[y][x] != 'E')
+		grid[y][x] = 'V';
+	flood_fill(grid, x + 1, y);
+	flood_fill(grid, x - 1, y);
+	flood_fill(grid, x, y + 1);
+	flood_fill(grid, x, y - 1);
+	return ;
 }

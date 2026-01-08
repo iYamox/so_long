@@ -6,7 +6,7 @@
 #    By: amary <amary@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/06 20:30:20 by amary             #+#    #+#              #
-#    Updated: 2026/01/07 17:49:15 by amary            ###   ########.fr        #
+#    Updated: 2026/01/08 18:08:33 by amary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC = srcs/main.c \
 		srcs/parsing/is_correct_char.c \
 		srcs/parsing/have_all_collect.c \
 		srcs/parsing/is_winable.c \
-		
+		srcs/parsing/flood_fill.c \
 
 OBJ = $(SRC:.c=.o)
 

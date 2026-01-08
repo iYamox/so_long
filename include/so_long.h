@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 18:26:28 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/08 18:26:39 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,10 @@ int		is_correct(char *str, int width);
 int		have_all_collect(t_map map);
 void	ft_verif_collect(char *str, int	width, int *P, int *C, int *E);
 int		is_winable(t_map map);
+char	**cpy_grid(t_map map);
+void	ft_find_player(char **grid, int heigth, int *px, int *py);
+int		check_winable(char **grid, int heigth);
+void	free_grid(char **grid, int heigth);
+void	flood_fill(char **grid, int y, int x);
 
 #endif
