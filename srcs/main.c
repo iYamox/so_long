@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:28:37 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 19:45:02 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/09 19:59:00 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 		return (write(2, "Parsing error\n", 15), 1);
 	if (!start_game(map))
 		return (write(2, "Game crashed\n", 14), 1);
+	// Ici je code les deplacements
 	free_map(map);
 	return (0);
 }
