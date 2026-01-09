@@ -6,13 +6,13 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 16:30:01 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 17:15:30 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/09 18:55:18 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	ft_verif_collect(char *str, int	width, int *P, int *C, int *E)
+void	ft_verif_collect(char *str, int width, int *P, int *C)
 {
 	int	i;
 
@@ -23,27 +23,42 @@ void	ft_verif_collect(char *str, int	width, int *P, int *C, int *E)
 			(*P)++;
 		else if (str[i] == 'C')
 			(*C)++;
-		else if (str[i] == 'E')
-			(*E)++;
 		i++;
 	}
 	return ;
 }
 
+void	ft_verif_e(char *str, int width, int *E)
+{
+	int	i;
+
+	i = 0;
+	while (i <= width - 1)
+	{
+		if (str[i] == 'E')
+			(*E)++;
+		i++;
+	}
+}
+
 int	have_all_collect(t_map map)
 {
-	int	P;
-	int	C;
-	int	E;
+	int	p;
+	int	c;
+	int	e;
 	int	j;
 
-	P = 0;
-	C = 0;
-	E = 0;
+	p = 0;
+	c = 0;
+	e = 0;
 	j = 0;
 	while (map.grid[j])
-		ft_verif_collect(map.grid[j++], map.width, &P, &C, &E);
-	if (P == 1 && C >= 1 && E >= 1)
+	{
+		ft_verif_collect(map.grid[j], map.width, &p, &c);
+		ft_verif_e(map.grid[j], map.width, &e);
+		j++;
+	}
+	if (p == 1 && c >= 1 && e >= 1)
 		return (1);
 	return (0);
 }

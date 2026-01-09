@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_rectangle.c                                     :+:      :+:    :+:   */
+/*   ft_load_mid.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/07 15:18:06 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 18:56:06 by amary            ###   ########.fr       */
+/*   Created: 2026/01/09 15:47:15 by amary             #+#    #+#             */
+/*   Updated: 2026/01/09 18:39:44 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	is_rectangle(t_map map)
+void	ft_load_mid(t_game *game)
 {
-	int	width;
-	int	j;
+	int		h;
+	int		w;
 
-	width = map.width;
-	j = 0;
-	while (map.grid[j])
+	h = 1;
+	while (h < game->map.height - 1)
 	{
-		if ((ft_strlen(map.grid[j]) - 1) != width)
+		w = 0;
+		while (w <= game->map.width - 1)
 		{
-			if (map.grid[j + 1] != NULL)
-				return (0);
-			if (ft_strlen(map.grid[j]) != width)
-				return (0);
+			if (w == 0)
+				mlx_put_image_to_window(game->mlx, game->window, game->img.left_wall, w * 96, h * 96);
+			if (w >= 1 && w < game->map.width - 1)
+				put_img(game, h, w);
+			if (w == game->map.width - 1)
+				mlx_put_image_to_window(game->mlx, game->window, game->img.rigth_wall, w * 96, h * 96);
+			w++;
 		}
-		j++;
+		h++;
 	}
-	return (1);
+	return ;
 }

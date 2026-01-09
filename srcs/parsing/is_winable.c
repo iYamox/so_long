@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 17:49:27 by amary             #+#    #+#             */
-/*   Updated: 2026/01/08 18:37:17 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/09 18:56:28 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	free_grid(char **grid, int heigth)
 		free(grid[j++]);
 	free(grid);
 }
+
 int	is_winable(t_map map)
 {
 	char	**cpy;

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_rectangle.c                                     :+:      :+:    :+:   */
+/*   start_game_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/07 15:18:06 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 18:56:06 by amary            ###   ########.fr       */
+/*   Created: 2026/01/09 13:05:35 by amary             #+#    #+#             */
+/*   Updated: 2026/01/09 18:24:43 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	is_rectangle(t_map map)
+int	start_game(t_map map)
 {
-	int	width;
-	int	j;
+	t_game	game;
 
-	width = map.width;
-	j = 0;
-	while (map.grid[j])
-	{
-		if ((ft_strlen(map.grid[j]) - 1) != width)
-		{
-			if (map.grid[j + 1] != NULL)
-				return (0);
-			if (ft_strlen(map.grid[j]) != width)
-				return (0);
-		}
-		j++;
-	}
+	game.mlx = mlx_init();
+	game.window = mlx_new_window(game.mlx, 1980, 1080, "Point faible ? Trop fort");
+	game.map = map;
+	if (!load_texture(&game))
+		return (write(2, "error_texture\n", 15), 0);
+	mlx_loop(game.mlx);
+
+	(void)map;
 	return (1);
 }

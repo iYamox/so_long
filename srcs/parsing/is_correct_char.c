@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 16:16:36 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 16:28:37 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/09 18:55:50 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	is_correct(char *str, int width)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i <= width - 1)
 	{
@@ -37,7 +37,7 @@ int	is_correct_char(t_map map)
 	while (map.grid[j])
 	{
 		if (!is_correct(map.grid[j], map.width))
-			return (0);	
+			return (0);
 		j++;
 	}
 	return (1);
