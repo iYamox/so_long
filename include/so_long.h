@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 18:52:25 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/09 19:55:52 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,20 @@ typedef struct s_img
 	void	*tree;
 }			t_img;
 
+typedef struct s_map_size
+{
+	int	h;
+	int	w;
+}			t_map_size;
+
 typedef struct s_game
 {
-	void	*mlx;
-	void	*window;
-	t_map	map;
-	t_img	img;
-}			t_game;
+	void		*mlx;
+	void		*window;
+	t_map		map;
+	t_map_size	map_size;
+	t_img		img;
+}				t_game;
 
 t_map	read_map(char *str);
 char	*get_next_line(int fd);
@@ -72,6 +79,7 @@ void	flood_fill(char **grid, int y, int x);
 void	free_map(t_map map);
 int		start_game(t_map map);
 void	ft_init_texture(t_game *game);
+void ft_init_texture_v2(t_game *game);
 int		load_texture(t_game *game);
 void	ft_load_top(t_game *game);
 void	ft_load_mid(t_game *game);

@@ -6,18 +6,18 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:47:46 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 14:53:44 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/09 19:46:29 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-t_map	read_map(char *str)
+t_map read_map(char *str)
 {
-	int		j;
-	int		fd;
-	char	*line;
-	t_map	map;
+	int j;
+	int fd;
+	char *line;
+	t_map map;
 
 	j = 0;
 	initialize_map(str, &map);
@@ -34,6 +34,7 @@ t_map	read_map(char *str)
 		free(line);
 		line = get_next_line(fd);
 	}
+
 	close(fd);
 	return (map);
 }
