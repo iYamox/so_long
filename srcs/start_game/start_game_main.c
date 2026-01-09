@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 13:05:35 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 19:56:12 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/09 19:57:48 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	start_game(t_map map)
 	t_game	game;
 	
 	game.mlx = mlx_init();
+	// Ici faut que je calcul la taille de la map
 	game.window = mlx_new_window(game.mlx, 1920, 1080, "So_long");
 	game.map = map;
 	if (!load_texture(&game))
