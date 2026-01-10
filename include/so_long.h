@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 22:08:16 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 22:17:52 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	free_map(t_map map);
 void	start_game(t_game *game);
 void	ft_init_texture(t_game *game);
 void	ft_init_texture_v2(t_game *game);
-void	load_texture(t_game *game);
+void	load_texture(t_game *game, int init);
 void	ft_load_top(t_game *game);
 void	ft_load_mid(t_game *game);
 void	put_img(t_game *game, int h, int w);

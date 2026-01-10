@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 20:40:02 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 22:09:58 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 22:18:06 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	render_map(t_game *game)
 		w = 0;
 		while (w < game->map.width - 1)
 		{
-			put_img(game, h, w);
+			load_texture(game, 0);
 			w++;
 		}
 	h++;
