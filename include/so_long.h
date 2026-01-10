@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 23:50:48 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/11 00:10:08 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,8 @@ int		close_game(t_game *game);
 void	change_direction(t_game *game, int px);
 void	ft_putnbr(int nb);
 int		render_loop(t_game *game);
+void	free_images(t_game *game);
+int		is_ber(char *str);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

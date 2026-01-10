@@ -6,7 +6,7 @@
 #    By: amary <amary@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/06 20:30:20 by amary             #+#    #+#              #
-#    Updated: 2026/01/10 23:49:54 by amary            ###   ########.fr        #
+#    Updated: 2026/01/11 00:10:36 by amary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,11 @@ SRC = srcs/main.c \
 	srcs/move_player/move_player.c \
 	srcs/move_player/handle_key.c \
 	srcs/start_game/close_game.c \
-	srcs/move_player/ft_putnbr.c \
+	srcs/utils/ft_putnbr.c \
 	srcs/start_game/render_loop.c \
+	srcs/utils/is_ber.c \
+	srcs/start_game/free_images.c \
+	srcs/utils/ft_strcmp.c \
 	
 OBJ = $(SRC:.c=.o)
 
