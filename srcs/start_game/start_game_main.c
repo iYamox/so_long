@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 13:05:35 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 23:31:48 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 23:48:55 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	start_game(t_game *game)
 			game->map.height * 96, "So_long");
 	game->player.count = 0;
 	load_texture(game, 1);
+	mlx_hook(game->window, 17, 0, close_game, game);
+	mlx_loop_hook(game->mlx, render_loop, game);
 	mlx_key_hook(game->window, handle_key, game);
 	mlx_loop(game->mlx);
 	return ;

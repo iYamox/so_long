@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_game.c                                       :+:      :+:    :+:   */
+/*   render_loop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 22:06:47 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 23:50:55 by amary            ###   ########.fr       */
+/*   Created: 2026/01/10 23:49:26 by amary             #+#    #+#             */
+/*   Updated: 2026/01/10 23:49:38 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	close_game(t_game *game)
+int	render_loop(t_game *game)
 {
-	free_map(game->map);
-	mlx_destroy_window(game->mlx, game->window);
-	exit(0);
+	render_map(game);
 	return (0);
 }
-

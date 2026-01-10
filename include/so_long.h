@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 23:37:42 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 23:50:48 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,9 @@ void	ft_load_down(t_game *game);
 void	move_player(t_game *game, int dy, int dx);
 void	render_map(t_game *game);
 int		handle_key(int keycode, t_game *game);
-void	close_game(t_game *game);
+int		close_game(t_game *game);
 void	change_direction(t_game *game, int px);
 void	ft_putnbr(int nb);
+int		render_loop(t_game *game);
 
 #endif
