@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:28:37 by amary             #+#    #+#             */
-/*   Updated: 2026/01/11 00:02:27 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/11 00:19:47 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	free_map(t_map map)
 int	main(int argc, char **argv)
 {
 	t_game	game;
-	
+
 	if (argc != 2)
 		return (write(2, "Error to many arguments\n", 25), 1);
 	if (!is_ber(argv[1]))
