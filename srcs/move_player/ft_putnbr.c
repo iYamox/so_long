@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_game_main.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/09 13:05:35 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 23:31:48 by amary            ###   ########.fr       */
+/*   Created: 2026/01/10 23:34:53 by amary             #+#    #+#             */
+/*   Updated: 2026/01/10 23:40:50 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	start_game(t_game *game)
+void	ft_putnbr(int nb)
 {
-	game->mlx = mlx_init();
-	game->window = mlx_new_window(game->mlx, game->map.width * 96,
-			game->map.height * 96, "So_long");
-	game->player.count = 0;
-	load_texture(game, 1);
-	mlx_key_hook(game->window, handle_key, game);
-	mlx_loop(game->mlx);
+	char	c;
+	
+	if (nb <= 9)
+	{
+		c = nb + '0';
+		write(1, &c, 1);
+	}
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
 	return ;
 }

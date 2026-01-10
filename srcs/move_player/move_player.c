@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 20:40:02 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 23:16:54 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 23:40:58 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	move_player(t_game *game, int dy, int dx)
 {
-	int	new_x;
-	int	new_y;
+	int		new_x;
+	int		new_y;	
 
 	new_x = game->player.px + dx;
 	new_y = game->player.py + dy;
@@ -32,6 +32,9 @@ void	move_player(t_game *game, int dy, int dx)
 	game->player.px = new_x;
 	game->player.py = new_y;
 	render_map(game);
+	ft_putnbr(game->player.count);
+	write(1, "\n", 1);
+	game->player.count++;
 	return ;
 }
 
