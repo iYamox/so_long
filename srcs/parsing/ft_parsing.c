@@ -6,13 +6,13 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:06:16 by amary             #+#    #+#             */
-/*   Updated: 2026/01/08 18:35:16 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 21:39:04 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	ft_parsing(t_map map)
+int	ft_parsing(t_map *map)
 {
 	if (!is_rectangle(map))
 		return (0);

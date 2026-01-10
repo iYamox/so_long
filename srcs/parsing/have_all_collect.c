@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 16:30:01 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 18:55:18 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 21:41:58 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_verif_e(char *str, int width, int *E)
 	}
 }
 
-int	have_all_collect(t_map map)
+int	have_all_collect(t_map *map)
 {
 	int	p;
 	int	c;
@@ -52,12 +52,13 @@ int	have_all_collect(t_map map)
 	c = 0;
 	e = 0;
 	j = 0;
-	while (map.grid[j])
+	while (map->grid[j])
 	{
-		ft_verif_collect(map.grid[j], map.width, &p, &c);
-		ft_verif_e(map.grid[j], map.width, &e);
+		ft_verif_collect(map->grid[j], map->width, &p, &c);
+		ft_verif_e(map->grid[j], map->width, &e);
 		j++;
 	}
+	map->collectible = c;
 	if (p == 1 && c >= 1 && e >= 1)
 		return (1);
 	return (0);

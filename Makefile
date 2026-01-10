@@ -6,7 +6,7 @@
 #    By: amary <amary@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/06 20:30:20 by amary             #+#    #+#              #
-#    Updated: 2026/01/10 12:32:44 by amary            ###   ########.fr        #
+#    Updated: 2026/01/10 22:08:49 by amary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,9 @@ SRC = srcs/main.c \
 	srcs/start_game/ft_load_mid.c \
 	srcs/start_game/put_img.c \
 	srcs/start_game/ft_init_texture.c \
+	srcs/move_player/move_player.c \
+	srcs/move_player/handle_key.c \
+	srcs/start_game/close_game.c \
 
 OBJ = $(SRC:.c=.o)
 

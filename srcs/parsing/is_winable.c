@@ -6,26 +6,27 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 17:49:27 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 18:56:28 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 21:54:35 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-char	**cpy_grid(t_map map)
+char	**cpy_grid(t_map *map)
 {
 	char	**cpy;
 	int		j;
 
 	j = 0;
-	cpy = malloc(map.height * sizeof(char *));
+	cpy = malloc((map->height + 1 )* sizeof(char *));
 	if (!cpy)
 		return (NULL);
-	while (j < map.height)
+	cpy[map->height] = NULL;
+	while (j < map->height)
 	{
-		cpy[j] = ft_strdup(map.grid[j]);
+		cpy[j] = ft_strdup(map->grid[j]);
 		if (!cpy[j])
-			return (free_grid(cpy, map.height), NULL);
+			return (free_grid(cpy, map->height), NULL);
 		j++;
 	}
 	return (cpy);
@@ -88,7 +89,7 @@ void	free_grid(char **grid, int heigth)
 	free(grid);
 }
 
-int	is_winable(t_map map)
+int	is_winable(t_map *map)
 {
 	char	**cpy;
 	int		px;
@@ -98,9 +99,9 @@ int	is_winable(t_map map)
 	cpy = cpy_grid(map);
 	if (!cpy)
 		return (0);
-	ft_find_player(cpy, map.height, &px, &py);
+	ft_find_player(cpy, map->height, &px, &py);
 	flood_fill(cpy, px, py);
-	result = check_winable(cpy, map.height);
-	free_grid(cpy, map.height);
+	result = check_winable(cpy, map->height);
+	free_grid(cpy, map->height);
 	return (result);
 }

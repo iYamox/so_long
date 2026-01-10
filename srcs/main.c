@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:28:37 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 19:18:17 by marvin           ###   ########.fr       */
+/*   Updated: 2026/01/10 21:48:52 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	free_map(t_map map)
 	j = 0;
 	while (map.grid[j])
 		free(map.grid[j++]);
+	free(map.grid);
 	return ;
 }
 
@@ -29,11 +30,9 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (write(2, "Error to many arguments\n", 25), 1);
 	game.map = read_map(argv[1]);
-	if (!ft_parsing(game.map))
-		return (write(2, "Parsing error\n", 15), 1);
-	start_game(game);
-	
-	// Ici je code les deplacements
+	if (!ft_parsing(&game.map))
+		return (write(2, "Parsing error\n", 15), free_map(game.map), 1);
+	start_game(&game);
 	free_map(game.map);
 	return (0);
 }

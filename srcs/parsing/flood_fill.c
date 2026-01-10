@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 18:08:35 by amary             #+#    #+#             */
-/*   Updated: 2026/01/08 18:37:55 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 21:58:24 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	flood_fill(char **grid, int x, int y)
 {
+	if (x < 0 || y < 0)
+		return ;
 	if (grid[y][x] == '1' || grid[y][x] == 'V')
 		return ;
 	if (grid[y][x] != 'E')

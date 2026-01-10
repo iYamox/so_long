@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 21:30:33 by amary             #+#    #+#             */
-/*   Updated: 2026/01/07 15:22:11 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 21:37:46 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	initialize_map(char *str, t_map *map)
 	if (fd < 0)
 		return (close (fd), exit(0));
 	line = get_next_line(fd);
+	if (!line || ft_strlen(line) < 2)
+		exit(1);
 	map->width = ft_strlen(line) - 1;
 	while (line)
 	{

@@ -21,8 +21,12 @@ void	put_img(t_game *game, int h, int w)
 		mlx_put_image_to_window(game->mlx, game->window, game->img.food,
 			w * 96, h * 96);
 	if (game->map.grid[h][w] == 'P')
-		mlx_put_image_to_window(game->mlx, game->window, game->img.player,
+	{
+		mlx_put_image_to_window(game->mlx, game->window, game->img.player_idle,
 			w * 96, h * 96);
+		game->player.px = w;
+		game->player.py = h;
+	}
 	if (game->map.grid[h][w] == '1')
 		mlx_put_image_to_window(game->mlx, game->window, game->img.tree,
 			w * 96, h * 96);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 19:18:08 by marvin           ###   ########.fr       */
+/*   Updated: 2026/01/10 22:08:16 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,18 @@
 # include "../../../1er_cercle/get_next_line/get_next_line.h"
 # include "../minilibx-linux/mlx.h"
 
+#define KEY_W 119
+#define KEY_A 97
+#define KEY_S 115
+#define KEY_D 100
+#define KEY_ESC 65307
+
 typedef struct s_map
 {
 	char	**grid;
 	int		height;
 	int		width;
+	int		collectible;
 }			t_map;
 
 typedef struct s_img
@@ -63,23 +70,23 @@ typedef struct s_game
 t_map	read_map(char *str);
 char	*get_next_line(int fd);
 void	initialize_map(char *str, t_map *map);
-int		ft_parsing(t_map map);
-int		is_rectangle(t_map map);
-int		is_correct_wall(t_map map);
+int		ft_parsing(t_map *map);
+int		is_rectangle(t_map *map);
+int		is_correct_wall(t_map *map);
 int		for_first_and_last(char *str, int width);
-int		is_correct_char(t_map map);
+int		is_correct_char(t_map *map);
 int		is_correct(char *str, int width);
-int		have_all_collect(t_map map);
+int		have_all_collect(t_map *map);
 void	ft_verif_collect(char *str, int width, int *P, int *C);
 void	ft_verif_E(char *str, int width, int *E);
-int		is_winable(t_map map);
-char	**cpy_grid(t_map map);
+int		is_winable(t_map *map);
+char	**cpy_grid(t_map *map);
 void	ft_find_player(char **grid, int heigth, int *px, int *py);
 int		check_winable(char **grid, int heigth);
 void	free_grid(char **grid, int heigth);
 void	flood_fill(char **grid, int y, int x);
 void	free_map(t_map map);
-void	start_game(t_game game);
+void	start_game(t_game *game);
 void	ft_init_texture(t_game *game);
 void	ft_init_texture_v2(t_game *game);
 void	load_texture(t_game *game);
@@ -87,5 +94,9 @@ void	ft_load_top(t_game *game);
 void	ft_load_mid(t_game *game);
 void	put_img(t_game *game, int h, int w);
 void	ft_load_down(t_game *game);
+void	move_player(t_game *game, int dy, int dx);
+void	render_map(t_game *game);
+int		handle_key(int keycode, t_game *game);
+void	close_game(t_game *game);
 
 #endif
