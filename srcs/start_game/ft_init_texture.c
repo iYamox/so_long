@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 16:43:10 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 19:17:58 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 13:01:40 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ void	ft_init_texture(t_game *game)
 	int	h;
 	int	w;
 
-	if (!game->img.top_wall)
-	{
-		write(2, "Error loading textures\n", 24);
-		exit(1);
-	}
 	game->img.top_wall = mlx_xpm_file_to_image(game->mlx,
 			"Assets/Top_Wall.xpm", &h, &w);
 	game->img.top_left_wall = mlx_xpm_file_to_image(game->mlx,
@@ -56,4 +51,10 @@ void	ft_init_texture_v2(t_game *game)
 			"Assets/Food.xpm", &h, &w);
 	game->img.tree = mlx_xpm_file_to_image(game->mlx,
 			"Assets/Tree.xpm", &h, &w);
+	if (!game->img.top_wall)
+	{
+		write(2, "Error loading textures\n", 24);
+		exit(1);
+	}
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:47:46 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 19:46:29 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 12:42:20 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_map read_map(char *str)
 {
-	int j;
-	int fd;
-	char *line;
+	int		j;
+	int		fd;
+	char	*line;
 	t_map map;
 
 	j = 0;
@@ -34,7 +34,6 @@ t_map read_map(char *str)
 		free(line);
 		line = get_next_line(fd);
 	}
-
 	close(fd);
 	return (map);
 }

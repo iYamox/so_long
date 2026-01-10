@@ -6,22 +6,18 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 13:05:35 by amary             #+#    #+#             */
-/*   Updated: 2026/01/09 19:57:48 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 13:20:20 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	start_game(t_map map)
+void	start_game(t_game game)
 {
-	t_game	game;
-	
 	game.mlx = mlx_init();
-	// Ici faut que je calcul la taille de la map
-	game.window = mlx_new_window(game.mlx, 1920, 1080, "So_long");
-	game.map = map;
-	if (!load_texture(&game))
-		return (write(2, "error_texture\n", 15), 0);
+	game.window = mlx_new_window(game.mlx, game.map.width * 96,
+			game.map.height * 96, "So_long");
+	load_texture(&game);
 	mlx_loop(game.mlx);
-	return (1);
+	return ;
 }
