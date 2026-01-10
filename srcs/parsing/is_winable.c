@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 17:49:27 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 21:54:35 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 23:14:22 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**cpy_grid(t_map *map)
 	int		j;
 
 	j = 0;
-	cpy = malloc((map->height + 1 )* sizeof(char *));
+	cpy = malloc((map->height + 1) * sizeof(char *));
 	if (!cpy)
 		return (NULL);
 	cpy[map->height] = NULL;

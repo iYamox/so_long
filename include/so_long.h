@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 22:17:52 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 23:11:36 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # include "../../../1er_cercle/get_next_line/get_next_line.h"
 # include "../minilibx-linux/mlx.h"
 
-#define KEY_W 119
-#define KEY_A 97
-#define KEY_S 115
-#define KEY_D 100
-#define KEY_ESC 65307
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+# define KEY_ESC 65307
 
 typedef struct s_map
 {
@@ -45,8 +45,6 @@ typedef struct s_img
 	void	*rigth_down_wall;
 	void	*floor;
 	void	*player_idle;
-	void	*player_walk1;
-	void	*player_walk2;
 	void	*exit;
 	void	*food;
 	void	*tree;
@@ -98,5 +96,6 @@ void	move_player(t_game *game, int dy, int dx);
 void	render_map(t_game *game);
 int		handle_key(int keycode, t_game *game);
 void	close_game(t_game *game);
+void	change_direction(t_game *game, int px);
 
 #endif

@@ -6,14 +6,14 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 15:54:09 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 22:15:16 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 23:16:40 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
 void	put_img(t_game *game, int h, int w)
-{	
+{
 	if (game->map.grid[h][w] == '0')
 		mlx_put_image_to_window(game->mlx, game->window, game->img.floor,
 			w * 96, h * 96);

@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 15:47:15 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 21:06:24 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 23:16:31 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ void	ft_load_mid(t_game *game)
 		while (w <= game->map.width - 1)
 		{
 			if (w == 0)
-				mlx_put_image_to_window(game->mlx, game->window, game->img.left_wall, w * 96, h * 96);
+				mlx_put_image_to_window(game->mlx, game->window,
+					game->img.left_wall, w * 96, h * 96);
 			if (w >= 1 && w < game->map.width - 1)
 				put_img(game, h, w);
 			if (w == game->map.width - 1)
-				mlx_put_image_to_window(game->mlx, game->window, game->img.rigth_wall, w * 96, h * 96);
+				mlx_put_image_to_window(game->mlx, game->window,
+					game->img.rigth_wall, w * 96, h * 96);
 			w++;
 		}
 		h++;
