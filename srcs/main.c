@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:28:37 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 13:19:26 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 19:18:17 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	main(int argc, char **argv)
 	game.map = read_map(argv[1]);
 	if (!ft_parsing(game.map))
 		return (write(2, "Parsing error\n", 15), 1);
-	if (!start_game(game))
-		return (write(2, "Game crashed\n", 14), 1);
+	start_game(game);
+	
 	// Ici je code les deplacements
 	free_map(game.map);
 	return (0);

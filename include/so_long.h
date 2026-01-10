@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 13:21:33 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 19:18:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,19 @@ typedef struct s_img
 	void	*left_down_wall;
 	void	*rigth_down_wall;
 	void	*floor;
-	void	*player;
+	void	*player_idle;
+	void	*player_walk1;
+	void	*player_walk2;
 	void	*exit;
 	void	*food;
 	void	*tree;
 }			t_img;
+
+typedef struct s_player
+{
+	int	px;
+	int	py;
+}		t_player;
 
 typedef struct s_game
 {
@@ -49,6 +57,7 @@ typedef struct s_game
 	void		*window;
 	t_map		map;
 	t_img		img;
+	t_player	player;
 }				t_game;
 
 t_map	read_map(char *str);

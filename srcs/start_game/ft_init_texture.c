@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_texture.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 16:43:10 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 13:01:40 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/10 19:18:17 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ void	ft_init_texture(t_game *game)
 			"Assets/Rigth_Wall.xpm", &h, &w);
 	game->img.left_wall = mlx_xpm_file_to_image(game->mlx,
 			"Assets/Left_Wall.xpm", &h, &w);
+	game->img.player_walk1 = mlx_xpm_file_to_image(game->mlx,
+			"Assets/Player_walk1.xpm", &h, &w);
+	game->img.player_walk2 = mlx_xpm_file_to_image(game->mlx,
+			"Assets/Player_walk2.xpm", &h, &w);
 	ft_init_texture_v2(game);
 }
 
@@ -43,8 +47,8 @@ void	ft_init_texture_v2(t_game *game)
 			"Assets/Rigth_Down_Wall.xpm", &h, &w);
 	game->img.floor = mlx_xpm_file_to_image(game->mlx,
 			"Assets/Floor.xpm", &h, &w);
-	game->img.player = mlx_xpm_file_to_image(game->mlx,
-			"Assets/Player.xpm", &h, &w);
+	game->img.player_idle = mlx_xpm_file_to_image(game->mlx,
+			"Assets/Player_idle.xpm", &h, &w);
 	game->img.exit = mlx_xpm_file_to_image(game->mlx,
 			"Assets/Eglise.xpm", &h, &w);
 	game->img.food = mlx_xpm_file_to_image(game->mlx,
