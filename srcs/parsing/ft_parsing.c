@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:06:16 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 21:39:04 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/12 17:05:00 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_parsing(t_map *map)
 	if (!have_all_collect(map))
 		return (0);
 	if (!is_winable(map))
-		return (0);
+		return (write(2, "Map not winable\n", 17), 0);
 	return (1);
 }

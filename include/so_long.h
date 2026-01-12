@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/11 00:10:08 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/12 16:33:10 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "../../../1er_cercle/get_next_line/get_next_line.h"
+# include "../srcs/utils/get_next_line.h"
 # include "../minilibx-linux/mlx.h"
 
 # define KEY_W 119

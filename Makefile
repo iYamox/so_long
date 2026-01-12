@@ -6,7 +6,7 @@
 #    By: amary <amary@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/06 20:30:20 by amary             #+#    #+#              #
-#    Updated: 2026/01/11 00:10:36 by amary            ###   ########.fr        #
+#    Updated: 2026/01/12 16:32:21 by amary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ MLX_PATH = minilibx-linux
 MLX_LIB = -L$(MLX_PATH) -lmlx -lXext -lX11 -lm -lbsd
 
 SRC = srcs/main.c \
-	../../1er_cercle/get_next_line/get_next_line.c \
-	../../1er_cercle/get_next_line/get_next_line_utils.c \
+	srcs/utils/get_next_line.c \
+	srcs/utils/get_next_line_utils.c \
 	srcs/parsing/read_map.c \
 	srcs/parsing/initialize_map.c \
 	srcs/parsing/ft_parsing.c \

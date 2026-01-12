@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 17:49:27 by amary             #+#    #+#             */
-/*   Updated: 2026/01/10 23:14:22 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/12 18:02:58 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,23 @@ int	check_winable(char **grid, int heigth)
 {
 	int	y;
 	int	x;
-	int	exit_found;
 
 	y = 0;
-	exit_found = 0;
 	while (y <= heigth - 1)
 	{
 		x = 0;
 		while (grid[y][x])
 		{
-			if (grid[y][x] == 'C')
-				return (0);
-			if (grid[y][x] == 'E')
-				exit_found = 1;
+			if (!(grid[y][x] == '1' || grid[y][x] == 'V'))
+			{
+				if (!(grid[y][x] == '\n'))
+					return (0);
+			}
 			x++;
 		}
 		y++;
 	}
-	return (exit_found);
+	return (1);
 }
 
 void	free_grid(char **grid, int heigth)

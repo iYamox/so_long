@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flood_fill.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 18:08:35 by amary             #+#    #+#             */
-/*   Updated: 2026/01/12 17:33:22 by amary            ###   ########.fr       */
+/*   Created: 2025/11/24 22:46:07 by amary             #+#    #+#             */
+/*   Updated: 2025/11/25 19:15:15 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	flood_fill(char **grid, int x, int y)
-{
-	if (x < 0 || y < 0)
-		return ;
-	if (grid[y][x] == '1' || grid[y][x] == 'V')
-		return ;
-	grid[y][x] = 'V';
-	flood_fill(grid, x + 1, y);
-	flood_fill(grid, x - 1, y);
-	flood_fill(grid, x, y + 1);
-	flood_fill(grid, x, y - 1);
-	return ;
-}
+# include <stdlib.h>
+# include <stddef.h>
+# include <unistd.h>
+# include <fcntl.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 3
+# endif
+
+char	*get_next_line(int fd);
+int		ft_strlen(char *str);
+char	*ft_strdup(char *s);
+int		ft_strchr(char *str, char c);
+char	*ft_strjoin(char *tmp, char *buffer);
+
+#endif
