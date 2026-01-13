@@ -6,14 +6,14 @@
 #    By: amary <amary@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/06 20:30:20 by amary             #+#    #+#              #
-#    Updated: 2026/01/12 16:32:21 by amary            ###   ########.fr        #
+#    Updated: 2026/01/13 17:04:20 by amary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 MLX_PATH = minilibx-linux
 MLX_LIB = -L$(MLX_PATH) -lmlx -lXext -lX11 -lm -lbsd

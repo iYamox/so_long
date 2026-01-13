@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 17:49:27 by amary             #+#    #+#             */
-/*   Updated: 2026/01/12 18:02:58 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/13 17:10:04 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,9 @@ int	check_winable(char **grid, int heigth)
 		while (grid[y][x])
 		{
 			if (!(grid[y][x] == '1' || grid[y][x] == 'V'))
-			{
-				if (!(grid[y][x] == '\n'))
-					return (0);
-			}
+				if (grid[y][x] != '\n')
+					if (grid[y][x] != '0')
+						return (0);
 			x++;
 		}
 		y++;
@@ -101,6 +100,15 @@ int	is_winable(t_map *map)
 	ft_find_player(cpy, map->height, &px, &py);
 	flood_fill(cpy, px, py);
 	result = check_winable(cpy, map->height);
+	if (result)
+	{
+		free_grid(cpy, map->height);
+		cpy = cpy_grid(map);
+		if (!cpy)
+			return (0);
+		flood_fill2(cpy, px, py);
+		result = check_winable2(cpy, map->height);
+	}
 	free_grid(cpy, map->height);
 	return (result);
 }

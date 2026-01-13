@@ -6,7 +6,7 @@
 /*   By: amary <amary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:27:29 by amary             #+#    #+#             */
-/*   Updated: 2026/01/12 16:33:10 by amary            ###   ########.fr       */
+/*   Updated: 2026/01/13 16:45:18 by amary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,7 @@ int		render_loop(t_game *game);
 void	free_images(t_game *game);
 int		is_ber(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	flood_fill2(char **grid, int x, int y);
+int		check_winable2(char **grid, int heigth);
 
 #endif
